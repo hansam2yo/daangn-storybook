@@ -1,44 +1,36 @@
-import type { FC } from "react";
-import { Box, Button, Stack } from "@mui/material";
+import type { FC, PropsWithChildren } from "react";
+import { Button, Link, Typography } from "@mui/material";
 
-export type HomeButtonProps = {};
+export type HomeButtonProps = PropsWithChildren<{
+  width?: string | number;
+}>;
+
+const BUTTON_BACKGROUND_COLOR = "#f1f3f5";
+const BUTTON_TEXT_COLOR = "#212529";
 
 const HomeButton: FC<HomeButtonProps> = (props) => {
+  const { children, width } = props;
+
   return (
-    <Box sx={{ width: "50%" }}>
-      <Stack spacing={2}>
-        <Button
-          variant="contained"
-          sx={{
-            fontSize: "1.8rem",
-            color: "#212529",
-            backgroundColor: "#f1f3f5",
-            border: "none",
-            borderRadius: "6px",
-            textDecoration: "none",
-            padding: "1.45rem 2.6rem",
-            display: "inline-block",
-          }}
-        >
-          인기매물 보기
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            fontSize: "1.8rem",
-            color: "#212529",
-            backgroundColor: "#f1f3f5",
-            border: "none",
-            borderRadius: "6px",
-            textDecoration: "none",
-            padding: "1.45rem 2.6rem",
-            display: "inline-block",
-          }}
-        >
-          믿을 수 있는 중고거래
-        </Button>
-      </Stack>
-    </Box>
+    <Button
+      variant="contained"
+      sx={(theme) => ({
+        width,
+        color: BUTTON_TEXT_COLOR,
+        backgroundColor: `${BUTTON_BACKGROUND_COLOR} !important`,
+        border: "none",
+        borderRadius: "6px",
+        textDecoration: "none",
+        padding: "10.5px 36px",
+        display: "inline-block",
+      })}
+    >
+      <Typography variant="h4">
+        <Link sx={{ color: "inherit" }} underline="none">
+          {children}
+        </Link>
+      </Typography>
+    </Button>
   );
 };
 
