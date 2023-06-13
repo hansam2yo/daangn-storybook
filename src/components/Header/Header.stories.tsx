@@ -1,8 +1,9 @@
-import Header from "./Header";
+import { Box } from "@mui/material";
+import Header, { HeaderProps } from "./Header";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Header> = {
-  title: "Header",
+  title: "components/Header",
   component: Header,
 };
 
@@ -11,6 +12,14 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {
-  //args로 props제어
-  render: () => <Header />,
+  args: {
+    logoLink: "#",
+  },
+  render: (args: HeaderProps) => {
+    return (
+      <Box bgcolor="#FBF7F2" height="100vh">
+        <Header {...args} />
+      </Box>
+    );
+  },
 };

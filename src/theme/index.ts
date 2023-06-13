@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import components from "./components";
 
 const TyphographyOptions = {
   h1: {
@@ -92,6 +93,7 @@ export const lightTheme = createTheme({
     },
   },
   typography: TyphographyOptions,
+  components,
 });
 
 export const darkTheme = createTheme({
@@ -105,4 +107,5 @@ export const darkTheme = createTheme({
     },
   },
   typography: TyphographyOptions,
+  components,
 });
