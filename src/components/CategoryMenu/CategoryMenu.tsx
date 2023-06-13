@@ -43,7 +43,13 @@ const CategoryMenu: FC<CategoryMenuProps> = (props) => {
         {data.map((item) => {
           const chipProps = item.selected ? selectedChipProps : defaulChipProps;
 
-          return <Chip label={item.label} {...chipProps} />;
+          return (
+            <Chip
+              key={`chip_${item.label}`}
+              label={item.label}
+              {...chipProps}
+            />
+          );
         })}
       </Stack>
     </Box>
