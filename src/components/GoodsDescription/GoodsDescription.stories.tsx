@@ -19,7 +19,6 @@ export const Default: Story = {
       <Box width="100%">
         <Stack spacing={2}>
           <GoodsDescription {...args}>인기매물 보기</GoodsDescription>
-          <GoodsDescription {...args}>믿을 수 있는 중고거래</GoodsDescription>
         </Stack>
       </Box>
     );
